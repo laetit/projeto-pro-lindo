@@ -5,6 +5,39 @@ body {
     font-family: 'Exo 2', sans-serif;
 }
 
+ /* CONFIGURACAO DE PAGINA */
+
+#page {
+    height: 100%;
+    padding-left: 4em;
+    color: #73c2d0;
+    background-image: url(../assets/images/g7521.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+#page .box {
+    width: 30vw;
+    height: 30vw;
+    margin: auto;
+    z-index: 30;
+    overflow: scroll;
+    padding: 2em;
+    margin-top: 2em;
+    border-radius: 5px;
+    box-shadow: 2px 2px 12px #32c18b;
+    background-color: #7b1346;
+}
+
+#page p {
+    font-weight: 300;
+    line-height: 2em;
+    text-align: justify;
+    text-justify: auto;
+}
+
+ /* ESTILOS DE MENU */
+
 .nav-bar {
     position: absolute;
     overflow: hidden;
@@ -45,4 +78,13 @@ body {
 .nav-bar li p {
     margin: 16px;
     color: #73c2d0
+}
+
+/* ESTILOS DE BACKGROUD */
+
+.backgroud-image {
+    position: absolute;
+    bottom: 2em;
+    right: 2em;
+    z-index: 0;
 }
