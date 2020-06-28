@@ -4,35 +4,60 @@
     <meta charset="UTF-8">
     <title>ForHire</title>
     <link href="./src/styled.css" rel="stylesheet">
+    <script type="module">
+        function loadPage(page) {
+            let doc
+            switch (page) {
+                case 1:
+                    doc = "./src/about.html"
+                    break
+                case 2:
+                    doc = "./src/product.html"
+                    break
+                case 3:
+                    doc = "./src/contact.html"
+                    break
+                default:
+                    doc = "./src/concept.html"
+            }
+            console.log(doc, page)
+            document.querySelector("#content").innerHTML = `<object type='text/html' data=${doc}>`
+        }
+        window.onload = event => {
+            window["concept"].addEventListener("click", event => loadPage(0))
+            window["about"].addEventListener("click", event => loadPage(1))
+            window["product"].addEventListener("click", event => loadPage(2))
+            window["contact"].addEventListener("click", event => loadPage(3))
+        }
+    </script>
 </head>
 <div class="nav-bar">
     <ul>
-        <li>
+        <li id="concept">
             <img src="./assets/dice.svg" />
-            <p>INICIO</p>
+            <p>CONCEITO</p>
         </li>
-        <li>
+        <li id="about">
             <img src="./assets/spade.svg" />
-            <p>SOBRE NÓS</p>
+            <p>FLUXO DE JOGO</p>
         </li>
-        <li>
+        <li id="product">
             <img src="./assets/clover.svg" />
-            <p>PRODUTOS</p>
+            <p>MECANICAS</p>
         </li>
-        <li>
+        <li id="contact">
             <img src="./assets/night-out.svg" />
             <p>FALE CONOSCO</p>
         </li>
     </ul>
+
 </div>
-<div id='page'>
+<div id="page">
     <div class="box">
-        <h1>SOBRE NÓS: ForHire</h1>
-        <p>Mussum Ipsum, cacilds vidis litro abertis. Delegadis gente finis, bibendum egestas augue arcu ut est.
-            Detraxit
-            consequat et quo num tendi nada. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Mé faiz
-            elementum
-            girarzis, nisi eros vermeio.</p>
+        <span>
+            Navegue pelo nosso menu para saber mais nosso projeto
+        </span>
+        <div id="content"></div>
     </div>
 </div>
 
